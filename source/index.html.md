@@ -55,9 +55,9 @@ curl "https://example.com/api/v1/sounds?duration=4"
 ```javascript
 const Renderforest = require('@renderforest/sdk-js')
 
-const sounds = Renderforest.getSounds(4)
-                .then((response) => (response && response.data))
-                .catch((error) => //handler the error)
+Renderforest.getSounds(4)
+  .then(console.log) // handler the success
+  .catch(console.error) // handler the error
 ```
 
 > The above command returns JSON structured like this:
@@ -122,9 +122,9 @@ curl "https://example.com/api/v1/sounds/2"
 ```javascript
 const Renderforest = require('@renderforest/sdk-js')
 
-const deleteResponse = Renderforest.deleteSound(2)
-                        .then((response) => (response && response.data))
-                        .catch((error) => //handler the error)
+Renderforest.deleteSound(2)
+  .then(console.log) // handler the success
+  .catch(console.error) // handler the error
 ```
 
 > The above command returns JSON structured like this:
