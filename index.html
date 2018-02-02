@@ -279,9 +279,9 @@ You must replace <code>'mock-authorization'</code> with one you have to generate
   -H <span class="s2">"Authorization: 'mock-authorization'"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">Renderforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@renderforest/sdk-js'</span><span class="p">)</span>
 
-<span class="kr">const</span> <span class="nx">sounds</span> <span class="o">=</span> <span class="nx">Renderforest</span><span class="p">.</span><span class="nx">getSounds</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">response</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
-                <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="c1">//handler the error)</span>
+<span class="nx">Renderforest</span><span class="p">.</span><span class="nx">getSounds</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span> <span class="c1">// handler the success</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="c1">// handler the error</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -345,9 +345,9 @@ Remember — any greater value of the duration than 180 will be overriden by 180
   -H <span class="s2">"Authorization: 'mock-authorization'"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">Renderforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@renderforest/sdk-js'</span><span class="p">)</span>
 
-<span class="kr">const</span> <span class="nx">deleteResponse</span> <span class="o">=</span> <span class="nx">Renderforest</span><span class="p">.</span><span class="nx">deleteSound</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-                        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">response</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
-                        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="c1">//handler the error)</span>
+<span class="nx">Renderforest</span><span class="p">.</span><span class="nx">deleteSound</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span> <span class="c1">// handler the success</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="c1">// handler the error</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
