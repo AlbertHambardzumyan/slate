@@ -3,6 +3,7 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
+  - javascript
 
 includes:
   - errors
@@ -26,7 +27,7 @@ Welcome to the Renderforest API! You can use our API to:
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
+curl "https://example.com/api/v1/..."
   -H "Authorization: 'mock-authorization'"
 ```
 
@@ -51,6 +52,13 @@ curl "https://example.com/api/v1/sounds?duration=4"
   -H "Authorization: 'mock-authorization'"
 ```
 
+```javascript
+const Renderforest = require('@renderforest/sdk-js')
+
+const sounds = Renderforest.getSounds(4)
+                .then((response) => (response && response.data))
+                .catch((error) => //handler the error)
+```
 
 > The above command returns JSON structured like this:
 
@@ -111,13 +119,23 @@ curl "https://example.com/api/v1/sounds/2"
   -H "Authorization: 'mock-authorization'"
 ```
 
+```javascript
+const Renderforest = require('@renderforest/sdk-js')
+
+const deleteResponse = Renderforest.deleteSound(2)
+                        .then((response) => (response && response.data))
+                        .catch((error) => //handler the error)
+```
+
 > The above command returns JSON structured like this:
 
 ```json
 {
   "status": 200,
   "message": "OK",
-  "data": "TBD" 
+  "data": {
+    "affectedRows": 1
+  } 
 }
 ```
 
