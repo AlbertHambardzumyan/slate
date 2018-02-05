@@ -67,7 +67,7 @@ Remember — any greater value of the duration than 180 will be overriden by 180
 </aside>
 
 <aside class="notice">
- If the 'id_user' is not specified, then the media is from Remndeforest library. This media cannot be deleted. <br>
+ If the 'id_user' is not specified, then the media is from Rendeforest library. This media cannot be deleted. <br>
  Otherwise, the media belongs to the specified user. This media can be deleted by the specified user. 
 </aside>
 
