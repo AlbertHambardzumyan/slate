@@ -6,6 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 includes:
+  - users
   - errors
 
 search: true
