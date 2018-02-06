@@ -113,6 +113,6 @@ This endpoint deletes a specific sound.
 
 ### URL Parameters
 
-Parameter | Required | Default |Description
+Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 soundId   |  ✔       | ✘       | The Id of the sound to delete.
