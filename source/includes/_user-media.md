@@ -91,5 +91,5 @@ Parameter | Required | Default |Description
 folderId  |  ✘       |  0      | The Id of the user-media folder to retrieve.
 
 <aside class="success">
- The folderId of the root folder is 0.
+ The folderId of the user-media root folder is 0.
 </aside>
