@@ -1,5 +1,62 @@
 # User-Media
 
+## Add User-Media Folder
+
+```shell
+curl "https://example.com/api/v1/user-media/folders"
+  -H "Authorization: 'mock-authorization'"
+  -X POST -d '{"name": "Skeppsholmen", "parentId": 1120039}'
+```
+
+```javascript
+const Renderforest = require('@renderforest/sdk-js')
+
+const payload = {
+  name: 'Skeppsholmen',
+  parentId: 1120039
+}
+Renderforest.addUserMediaFolder(payload)
+  .then(console.log) // handler the success
+  .catch(console.error) // handler the error
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status": 201,
+  "message": "Created",
+  "data": {
+    "id": 1495403,
+    "user_id": 1469277,
+    "parent_id": 1120039,
+    "name": "Skeppsholmen",
+    "path": "user_1469277/My_Images/Skeppsholmen",
+    "status": 1,
+    "updatedAt": "2018-02-06T08:37:12.715Z",
+    "createdAt": "2018-02-06T08:37:12.715Z"
+  }
+}
+```
+
+This endpoint creates user-media folder.
+
+### HTTP Request
+
+`POST https://example.com/api/v1/user-media/folders`
+
+### Body Parameters
+
+Parameter | Required | Default |Description
+--------- | -------- | ------- | -----------
+name      |  ✔       |  ✘      | The name of the user-media folder.
+parentId  |  ✘       |  0      | The parent Id of the user-media folder.
+
+<aside class="success">
+ If no parentId is specified, then the user-media folder is created in the root folder.
+</aside>
+
+
 ## Get User-Media Folder
 
 ```shell
