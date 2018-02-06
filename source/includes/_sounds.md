@@ -103,10 +103,10 @@ This endpoint deletes a specific sound.
 
 ### HTTP Request
 
-`DELETE https://example.com/api/v1/sounds/<ID>`
+`DELETE https://example.com/api/v1/sounds/<soundId>`
 
 ### URL Parameters
 
 Parameter | Required | Default |Description
 --------- | -------- | ------- | -----------
-ID        |  ✔       | ✘       | The ID of the sound to delete.
+soundId   |  ✔       | ✘       | The Id of the sound to delete.
