@@ -237,6 +237,14 @@
               </ul>
           </li>
           <li>
+            <a href="#user-media" class="toc-h1 toc-link" data-title="user-media">User-Media</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-user-media-folder" class="toc-h2 toc-link" data-title="get-user-media-folder">Get User-Media Folder</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#users" class="toc-h1 toc-link" data-title="users">Users</a>
               <ul class="toc-list-h2">
                   <li>
@@ -375,7 +383,7 @@ Remember — any greater value of the duration than 180 will be overriden by 180
 </span></code></pre>
 <p>This endpoint deletes a specific sound.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>DELETE https://example.com/api/v1/sounds/&lt;ID&gt;</code></p>
+<p><code>DELETE https://example.com/api/v1/sounds/&lt;soundId&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -386,12 +394,105 @@ Remember — any greater value of the duration than 180 will be overriden by 180
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
+<td>soundId</td>
 <td>✔</td>
 <td>✘</td>
-<td>The ID of the sound to delete.</td>
+<td>The Id of the sound to delete.</td>
 </tr>
 </tbody></table>
+<h1 id='user-media'>User-Media</h1><h2 id='get-user-media-folder'>Get User-Media Folder</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/user-media/folders/1367155"</span>
+  -H <span class="s2">"Authorization: 'mock-authorization'"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">Renderforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@renderforest/sdk-js'</span><span class="p">)</span>
+
+<span class="nx">Renderforest</span><span class="p">.</span><span class="nx">getUserMediaFolder</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span> <span class="c1">// handler the success</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="c1">// handler the error</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1367155</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stockholm, Sweden"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1120039</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"folders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1495402</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Old Town"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1367155</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5985247</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1469277</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"folder_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1367155</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-22 11.37.59.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/user_1469277/My_Images/new_folder/db8ad8c8-f7ab-4a99-a7b2-210abfce2d86.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumbnail_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/user_1469277/My_Images/new_folder/thumb_bbac2490-bc92-4d12-83d2-1140d429b5bf.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">1440</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"filesize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656684</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb_video"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"webp_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/user_1469277/My_Images/new_folder/b68ee8c4-264c-4502-9b0c-2c5c2fca0609.webp"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"frame_image"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fieldname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70b01a00-eda7-11e7-adfa-836a81ae1d29"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-30T17:22:06.022Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-30T17:22:06.022Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5985252</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1469277</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"folder_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1367155</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-22 12.58.43.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/user_1469277/My_Images/new_folder/ed5176eb-fff2-486c-994c-86faa1351ab5.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumbnail_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/user_1469277/My_Images/new_folder/thumb_c25aa4e4-0e6c-41c5-b422-efb1aafb1b80.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1440</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"filesize"</span><span class="p">:</span><span class="w"> </span><span class="mi">2211797</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb_video"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"webp_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/user_1469277/My_Images/new_folder/955fd8f5-1539-43dc-b659-7ae46948cfd6.webp"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"frame_image"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fieldname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7fcf8fc0-eda7-11e7-adfa-836a81ae1d29"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-30T17:22:33.602Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-30T17:22:33.602Z"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the user-media folder with entire content.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://example.com/api/v1/user-media/folders/&lt;folderId&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>folderId</td>
+<td>✘</td>
+<td>0</td>
+<td>The Id of the user-media folder to retrieve.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+ The folderId of the root folder is 0.
+</aside>
 <h1 id='users'>Users</h1><h2 id='get-current-user'>Get Current User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/users/current"</span>
   -H <span class="s2">"Authorization: 'mock-authorization'"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">Renderforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@renderforest/sdk-js'</span><span class="p">)</span>
