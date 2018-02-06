@@ -67,7 +67,10 @@ curl "https://example.com/api/v1/user-media/folders/1367155"
 ```javascript
 const Renderforest = require('@renderforest/sdk-js')
 
-Renderforest.getUserMediaFolder()
+const payload = {
+  folderId: 1367155
+}
+Renderforest.getUserMediaFolder(payload)
   .then(console.log) // handler the success
   .catch(console.error) // handler the error
 ```
