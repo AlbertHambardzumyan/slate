@@ -10,7 +10,10 @@ curl "https://example.com/api/v1/sounds?duration=4"
 ```javascript
 const Renderforest = require('@renderforest/sdk-js')
 
-Renderforest.getSounds(4)
+const payload = {
+  duration: 4
+}
+Renderforest.getSounds(payload)
   .then(console.log) // handler the success
   .catch(console.error) // handler the error
 ```
@@ -74,7 +77,7 @@ Remember — any greater value of the duration than 180 will be overriden by 180
 ## Delete a Specific Sound
 
 ```shell
-curl "https://example.com/api/v1/sounds/2"
+curl "https://example.com/api/v1/sounds/646525"
   -X DELETE
   -H "Authorization: 'mock-authorization'"
 ```
@@ -82,7 +85,10 @@ curl "https://example.com/api/v1/sounds/2"
 ```javascript
 const Renderforest = require('@renderforest/sdk-js')
 
-Renderforest.deleteSound(2)
+const payload = {
+  soundId: 646525
+}
+Renderforest.deleteSound(payload)
   .then(console.log) // handler the success
   .catch(console.error) // handler the error
 ```
