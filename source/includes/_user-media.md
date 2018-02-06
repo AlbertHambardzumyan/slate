@@ -1,5 +1,50 @@
 # User-Media
 
+## Delete User-Media
+
+```shell
+curl "https://example.com/api/v1/user-media"
+  -X DELETE -d '{"fileIds": "Skeppsholmen", "parentId": 1120039}'
+  -H "Authorization: 'mock-authorization'"
+```
+
+```javascript
+const Renderforest = require('@renderforest/sdk-js')
+
+const payload = {
+  fileIds: [646525, 646525]
+}
+Renderforest.deleteUserMedia(payload)
+  .then(console.log) // handler the success
+  .catch(console.error) // handler the error
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status": 200,
+  "message": "OK",
+  "data": [
+    [ 1 ],
+    [ 0 ]
+  ] 
+}
+```
+
+This endpoint deletes a specific sound.
+
+### HTTP Request
+
+`DELETE https://example.com/api/v1/user-media`
+
+### Body Parameters
+
+Parameter | Required | Default | Description
+--------- | -------- | ------- | -----------
+fileIds   |  ✔       | ✘       | An array of user-media Id's to delete.
+
+
 ## Add User-Media Folder
 
 ```shell
@@ -153,6 +198,7 @@ folderId  |  ✘       |  0      | The Id of the user-media folder to retrieve.
 <aside class="success">
  The folderId of the user-media root folder is 0.
 </aside>
+
 
 ## Update User-Media Folder (partial update)
 
