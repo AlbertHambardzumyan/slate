@@ -102,7 +102,7 @@ parentId  |  ✘       |  0      | The parent Id of the user-media folder.
 </aside>
 
 
-## Get User-Media Folder
+## Get User-Media Folder (entire content)
 
 ```shell
 curl "https://example.com/api/v1/user-media/folders/1367155"
@@ -265,4 +265,52 @@ parentId  |  ✘       |  ✘      | The parent Id of the user-media folder.
 
 <aside class="notice">
  Any of the properties can be updated separately, as well as all of them at the same time.
+</aside>
+
+
+## Delete User-Media Folder (entire content)
+
+```shell
+curl "https://example.com/api/v1/user-media/folders/1495403"
+  -X DELETE
+  -H "Authorization: 'mock-authorization'"
+```
+
+```javascript
+const Renderforest = require('@renderforest/sdk-js')
+
+const payload = {
+  folderId: 1495403
+}
+Renderforest.deleteUserMediaFolder(payload)
+  .then(console.log) // handler the success
+  .catch(console.error) // handler the error
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status": 200,
+  "message": "OK",
+  "data": {
+    "affectedRows": 1
+  } 
+}
+```
+
+This endpoint deletes a specific sound.
+
+### HTTP Request
+
+`DELETE https://example.com/api/v1/user-media/folders/<folderId>`
+
+### URL Parameters
+
+Parameter | Required | Default | Description
+--------- | -------- | ------- | -----------
+folderId  |  ✔       | ✘       | The Id of the folder to delete.
+
+<aside class="warning">
+ Note, you cannot delete the root folder.
 </aside>
