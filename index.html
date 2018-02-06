@@ -246,10 +246,13 @@
                     <a href="#add-user-media-folder" class="toc-h2 toc-link" data-title="add-user-media-folder">Add User-Media Folder</a>
                   </li>
                   <li>
-                    <a href="#get-user-media-folder" class="toc-h2 toc-link" data-title="get-user-media-folder">Get User-Media Folder</a>
+                    <a href="#get-user-media-folder-entire-content" class="toc-h2 toc-link" data-title="get-user-media-folder-entire-content">Get User-Media Folder (entire content)</a>
                   </li>
                   <li>
                     <a href="#update-user-media-folder-partial-update" class="toc-h2 toc-link" data-title="update-user-media-folder-partial-update">Update User-Media Folder (partial update)</a>
+                  </li>
+                  <li>
+                    <a href="#delete-user-media-folder-entire-content" class="toc-h2 toc-link" data-title="delete-user-media-folder-entire-content">Delete User-Media Folder (entire content)</a>
                   </li>
               </ul>
           </li>
@@ -518,7 +521,7 @@ Remember — any greater value of the duration than 180 will be overriden by 180
 <aside class="success">
  If no parentId is specified, then the user-media folder is created in the root folder.
 </aside>
-<h2 id='get-user-media-folder'>Get User-Media Folder</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/user-media/folders/1367155"</span>
+<h2 id='get-user-media-folder-entire-content'>Get User-Media Folder (entire content)</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/user-media/folders/1367155"</span>
   -H <span class="s2">"Authorization: 'mock-authorization'"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">Renderforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@renderforest/sdk-js'</span><span class="p">)</span>
 
@@ -694,6 +697,52 @@ Remember — any greater value of the duration than 180 will be overriden by 180
 
 <aside class="notice">
  Any of the properties can be updated separately, as well as all of them at the same time.
+</aside>
+<h2 id='delete-user-media-folder-entire-content'>Delete User-Media Folder (entire content)</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/user-media/folders/1495403"</span>
+  -X DELETE
+  -H <span class="s2">"Authorization: 'mock-authorization'"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">Renderforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@renderforest/sdk-js'</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">folderId</span><span class="p">:</span> <span class="mi">1495403</span>
+<span class="p">}</span>
+<span class="nx">Renderforest</span><span class="p">.</span><span class="nx">deleteUserMediaFolder</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span> <span class="c1">// handler the success</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="c1">// handler the error</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"affectedRows"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint deletes a specific sound.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://example.com/api/v1/user-media/folders/&lt;folderId&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>folderId</td>
+<td>✔</td>
+<td>✘</td>
+<td>The Id of the folder to delete.</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+ Note, you cannot delete the root folder.
 </aside>
 <h1 id='users'>Users</h1><h2 id='get-current-user'>Get Current User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/users/current"</span>
   -H <span class="s2">"Authorization: 'mock-authorization'"</span>
