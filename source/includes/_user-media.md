@@ -47,7 +47,7 @@ This endpoint creates user-media folder.
 
 ### Body Parameters
 
-Parameter | Required | Default |Description
+Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 name      |  ✔       |  ✘      | The name of the user-media folder.
 parentId  |  ✘       |  0      | The parent Id of the user-media folder.
@@ -146,10 +146,77 @@ This endpoint retrieves the user-media folder with entire content.
 
 ### URL Parameters
 
-Parameter | Required | Default |Description
+Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 folderId  |  ✘       |  0      | The Id of the user-media folder to retrieve.
 
 <aside class="success">
  The folderId of the user-media root folder is 0.
+</aside>
+
+## Update User-Media Folder (partial update)
+
+```shell
+curl "https://example.com/api/v1/user-media/folders/1495403"
+  -X PATCH -d '{"name": "Skeppsholmen, Stockholm", "parentId": 1367155}'
+  -H "Authorization: 'mock-authorization'"
+```
+
+```javascript
+const Renderforest = require('@renderforest/sdk-js')
+
+const payload = {
+  folderId: 1495403,
+  name: 'Skeppsholmen, Stockholm',
+  parentId: 1367155
+}
+Renderforest.updateUserMediaFolderPartial(payload)
+  .then(console.log) // handler the success
+  .catch(console.error) // handler the error
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status": 200,
+  "message": "OK",
+  "data": {
+    "id": 1495403,
+    "user_id": 1469277,
+    "parent_id": 1367155,
+    "name": "Skeppsholmen, Stockholm",
+    "path": "user_1469277/My_Images/Stockholm/Skeppsholmen",
+    "status": 1,
+    "updatedAt": "2018-02-06T08:37:12.715Z",
+    "createdAt": "2018-02-06T10:33:06.842Z"
+  }
+}
+```
+
+This endpoint updates the user-media folder (partial update).
+
+### HTTP Request
+
+`PATCH https://example.com/api/v1/user-media/folders/<folderId>`
+
+### URL Parameters
+
+Parameter | Required | Default | Description
+--------- | -------- | ------- | -----------
+folderId  |  ✔       |  ✘      | The Id of the user-media folder to update.
+
+### Body Parameters
+
+Parameter | Required | Default | Description
+--------- | -------- | ------- | -----------
+name      |  ✘       |  ✘      | The name of the user-media folder.
+parentId  |  ✘       |  ✘      | The parent Id of the user-media folder.
+
+<aside class="warning">
+ Note, you cannot move the folder into it's sub folder.
+</aside>
+
+<aside class="notice">
+ Any of the properties can be updated separately, as well as all of them at the same time.
 </aside>
