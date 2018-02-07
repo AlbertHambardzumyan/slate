@@ -462,3 +462,78 @@ templateId |  ✔       | ✘       | The Id of the template.
  Pluggable-Screens are grouped by categories. Currently, this template has 21 groups of pluggable-screens.
  We have included only 2 of them in our example with limited number of pluggable-screens for each if them.
 </aside>
+
+
+## Get Template-Presets of the Template
+
+```shell
+curl "https://example.com/api/v1/templates/701/template-presets"
+  -H "Authorization: 'mock-authorization'"
+```
+
+```javascript
+const Renderforest = require('@renderforest/sdk-js')
+
+const payload = {
+  templateId: 701
+}
+Renderforest.getTemplatePresets(payload)
+  .then(console.log) // handler the success
+  .catch(console.error) // handler the error
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status": 200,
+  "message": "OK",
+  "data": [
+    {
+      "id": 55,
+      "template_id": 701,
+      "project_id": 1518012,
+      "title": "Social media promotion video",
+      "description": "Get rid of the boring content and inspiration killers. Create your Social media promotion video with one click. Adjust, amend the preset in accordance with your needs and company's profile. ",
+      "order": 700,
+      "public": true,
+      "thumbnail": "https://static.rfstat.com/media/Thumbnails/Presets/2017/explainer-video-toolkit/b85890da-7749-44ed-b109-0f475b143ad7.png",
+      "prev_video": "//player.vimeo.com/video/215435347",
+      "createdAt": "2017-05-01T18:52:25.475Z",
+      "updatedAt": "2017-10-09T07:39:00.628Z"
+    },
+    {
+      "id": 2,
+      "template_id": 701,
+      "project_id": 855446,
+      "title": "Company Promotion",
+      "description": "Company promotion is a great preset to promote companies of all sizes. Features a character animation, rich and enhanced visuals and kinetic typography. You can add new scenes from our collection of 300+ scenes or remove the scenes you dont like. Colors and music are adjustable to match your own branding needs. ",
+      "order": 120,
+      "public": true,
+      "thumbnail": "https://static.rfstat.com/media/Thumbnails/Presets/2017/explainer-video-toolkit/company-promotion.jpg",
+      "prev_video": "//player.vimeo.com/video/190230714",
+      "createdAt": "2016-11-04T20:50:13.056Z",
+      "updatedAt": "2016-11-05T06:39:47.075Z"
+    }
+  ] 
+}
+```
+
+This endpoint retrieves template-presets of the template.<br>
+
+### HTTP Request
+
+`GET https://example.com/api/v1/templates/<templateId>/template-presets`
+
+### URL Parameters
+
+Parameter  | Required | Default | Description
+---------- | -------- | ------- | -----------
+templateId |  ✔       | ✘       | The Id of the template.
+
+<aside class="notice">
+ Notice <br>
+ The number of template-presets is vary from tremplate to template.<br>
+ Template-presets are ready made stories created from this template to fasten your video production. 
+ Currently, this template has 45 template-presets, but we have included only 2 of them in our example.
+</aside>
