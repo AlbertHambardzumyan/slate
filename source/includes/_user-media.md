@@ -263,7 +263,7 @@ parentId  |  ✘       |  ✘      | The parent Id of the user-media folder.
 
 <aside class="warning">
  Warning <br>
- Note, you cannot move the folder into it's sub folder.
+ You cannot move the folder into it's sub folder.
 </aside>
 
 <aside class="notice">
@@ -317,5 +317,5 @@ folderId  |  ✔       | ✘       | The Id of the folder to delete.
 
 <aside class="warning">
  Warning <br>
- Note, you cannot delete the root folder.
+ You cannot delete the root folder.
 </aside>
