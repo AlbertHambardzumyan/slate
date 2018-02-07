@@ -98,6 +98,7 @@ name      |  ✔       |  ✘      | The name of the user-media folder.
 parentId  |  ✘       |  0      | The parent Id of the user-media folder.
 
 <aside class="success">
+ Info <br>
  If no parentId is specified, then the user-media folder is created in the root folder.
 </aside>
 
@@ -196,6 +197,7 @@ Parameter | Required | Default | Description
 folderId  |  ✘       |  0      | The Id of the user-media folder to retrieve.
 
 <aside class="success">
+ Info <br>
  The folderId of the user-media root folder is 0.
 </aside>
 
@@ -260,10 +262,12 @@ name      |  ✘       |  ✘      | The name of the user-media folder.
 parentId  |  ✘       |  ✘      | The parent Id of the user-media folder.
 
 <aside class="warning">
+ Warning <br>
  Note, you cannot move the folder into it's sub folder.
 </aside>
 
 <aside class="notice">
+ Notice <br>
  Any of the properties can be updated separately, as well as all of them at the same time.
 </aside>
 
@@ -312,5 +316,6 @@ Parameter | Required | Default | Description
 folderId  |  ✔       | ✘       | The Id of the folder to delete.
 
 <aside class="warning">
+ Warning <br>
  Note, you cannot delete the root folder.
 </aside>

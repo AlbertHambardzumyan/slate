@@ -44,5 +44,6 @@ Renderforest expects for the authorization string to be included in all API requ
 `Authorization: 'mock-authorization'`
 
 <aside class="notice">
-You must replace <code>'mock-authorization'</code> with one you have to generate.
+ Notice <br>
+ You must replace <code>'mock-authorization'</code> with one you have to generate.
 </aside>

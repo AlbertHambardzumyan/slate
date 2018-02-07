@@ -1,6 +1,7 @@
 # Errors
 
 <aside class="notice">
+ Notice <br>
  The Renderforest API uses the following error codes:
 </aside>
 

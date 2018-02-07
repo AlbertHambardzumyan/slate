@@ -260,6 +260,7 @@ Parameter  | Required | Default | Description
 templateId |  ✔       | ✘       | The Id of the template.
 
 <aside class="notice">
- Note, the number of color-presets is vary from tremplate to template.<br>
+ Notice <br>
+ The number of color-presets is vary from tremplate to template.<br>
  Currently, this template has 15 color-presets, but we have included only 3 of them in our example.
 </aside>
