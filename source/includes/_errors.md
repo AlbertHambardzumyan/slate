@@ -6,7 +6,7 @@
 </aside>
 
 
-Status code | Error code          | Error message
+Status      | Code                | Message
 ----------- | ------------------- | -----------------------------------------------------
 400         | BadRequest          | ✍
 401         | Unauthorized        | Authorization required.
