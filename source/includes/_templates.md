@@ -172,7 +172,8 @@ Renderforest.getTemplateColorPresets(payload)
 }
 ```
 
-This endpoint retrieves color-presets of the template.
+This endpoint retrieves color-presets of the template.<br>
+You can apply these color presets to your project to give it better and unique look.
 
 ### HTTP Request
 
