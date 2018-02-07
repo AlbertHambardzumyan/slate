@@ -9,6 +9,7 @@
 Status      | Code                | Message
 ----------- | ------------------- | -----------------------------------------------------
 400         | BadRequest          | ✍
+400         | InvalidInput        | ✍
 401         | Unauthorized        | Authorization required.
 403         | Forbidden           | The user is blocked.
 404         | NotFound            | Media folder with id: {id} is not found.
