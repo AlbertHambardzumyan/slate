@@ -240,6 +240,9 @@
             <a href="#templates" class="toc-h1 toc-link" data-title="templates">Templates</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#get-all-templates" class="toc-h2 toc-link" data-title="get-all-templates">Get All Templates</a>
+                  </li>
+                  <li>
                     <a href="#get-a-specific-template" class="toc-h2 toc-link" data-title="get-a-specific-template">Get a Specific Template</a>
                   </li>
                   <li>
@@ -312,7 +315,8 @@ curl <span class="s2">"https://example.com/api/v1/..."</span>
 <p><code>Authorization: &#39;mock-authorization&#39;</code></p>
 
 <aside class="notice">
-You must replace <code>'mock-authorization'</code> with one you have to generate.
+ Notice <br>
+ You must replace <code>'mock-authorization'</code> with one you have to generate.
 </aside>
 <h1 id='sounds'>Sounds</h1><h2 id='get-all-sounds'>Get All Sounds</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/sounds?duration=4"</span>
   -H <span class="s2">"Authorization: 'mock-authorization'"</span>
@@ -380,10 +384,12 @@ You must replace <code>'mock-authorization'</code> with one you have to generate
 </tbody></table>
 
 <aside class="warning">
-Remember — any greater value of the duration than 180 will be overriden by 180!
+ Warning <br>
+ Remember — any greater value of the duration than 180 will be overriden by 180!
 </aside>
 
 <aside class="notice">
+ Notice <br>
  If the 'id_user' is not specified, then the media is from Rendeforest library. This media cannot be deleted. <br>
  Otherwise, the media belongs to the specified user. This media can be deleted by the specified user. 
 </aside>
@@ -429,7 +435,89 @@ Remember — any greater value of the duration than 180 will be overriden by 180
 <td>The Id of the sound to delete.</td>
 </tr>
 </tbody></table>
-<h1 id='templates'>Templates</h1><h2 id='get-a-specific-template'>Get a Specific Template</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/templates/701"</span>
+<h1 id='templates'>Templates</h1><h2 id='get-all-templates'>Get All Templates</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/templates?categoryId=3&amp;equalizer=false&amp;limit=4"</span>
+  -H <span class="s2">"Authorization: 'mock-authorization'"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">Renderforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@renderforest/sdk-js'</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">categoryId</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="na">equalizer</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">limit</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}</span>
+<span class="nx">Renderforest</span><span class="p">.</span><span class="nx">getTemplates</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span> <span class="c1">// handler the success</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="c1">// handler the error</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">912</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ultimate Icon Animation Pack"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"videoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"//player.vimeo.com/video/248458512"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2017/4_gen_2017/Ultimate-Icon-Animation-Pack/249c8f83-3f4a-4474-ade0-490bb5ca0d5a.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"video"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">701</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Explainer Video Toolkit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"videoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"//player.vimeo.com/video/190349594"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Screen/tumb400.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"video"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">942</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Futuristic Cube Presentation"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"videoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"//player.vimeo.com/video/240152695"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2017/4_gen_2017/Futuristic_Cube_Presentation/ac13db59-5751-4c64-bc04-810e0112502a.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"video"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">816</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Business Promotion"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"videoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"//player.vimeo.com/video/211478094"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2017/Promotion/my-business-promotion/766f703e-0bbf-4dc6-b845-09d3a81f7eb8.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"video"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all templates.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://example.com/api/v1/templates</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>categoryId</td>
+<td>✘</td>
+<td>✘</td>
+<td>The Id of the template category.</td>
+</tr>
+<tr>
+<td>equalizer</td>
+<td>✘</td>
+<td>✘</td>
+<td>Retrieves only equalizer templates or eliminates equalizer templates.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>✘</td>
+<td>10</td>
+<td>Restricts the number of templates to be retrieved.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-template'>Get a Specific Template</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/templates/701"</span>
   -H <span class="s2">"Authorization: 'mock-authorization'"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">Renderforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@renderforest/sdk-js'</span><span class="p">)</span>
 
@@ -515,7 +603,7 @@ Remember — any greater value of the duration than 180 will be overriden by 180
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific template.</p>
-<h3 id='http-request'>HTTP Request</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://example.com/api/v1/templates/&lt;templateId&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -592,7 +680,7 @@ Remember — any greater value of the duration than 180 will be overriden by 180
 </span></code></pre>
 <p>This endpoint retrieves color-presets of the template.<br>
 You can apply these color presets to your project to give it better and unique look.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://example.com/api/v1/templates/&lt;templateId&gt;/color-presets</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -612,7 +700,8 @@ You can apply these color presets to your project to give it better and unique l
 </tbody></table>
 
 <aside class="notice">
- Note, the number of color-presets is vary from tremplate to template.<br>
+ Notice <br>
+ The number of color-presets is vary from tremplate to template.<br>
  Currently, this template has 15 color-presets, but we have included only 3 of them in our example.
 </aside>
 <h1 id='user-media'>User-Media</h1><h2 id='delete-user-media'>Delete User-Media</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/user-media"</span>
@@ -716,6 +805,7 @@ You can apply these color presets to your project to give it better and unique l
 </tbody></table>
 
 <aside class="success">
+ Info <br>
  If no parentId is specified, then the user-media folder is created in the root folder.
 </aside>
 <h2 id='get-user-media-folder-entire-content'>Get User-Media Folder (entire content)</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/user-media/folders/1367155"</span>
@@ -812,6 +902,7 @@ You can apply these color presets to your project to give it better and unique l
 </tbody></table>
 
 <aside class="success">
+ Info <br>
  The folderId of the user-media root folder is 0.
 </aside>
 <h2 id='update-user-media-folder-partial-update'>Update User-Media Folder (partial update)</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/user-media/folders/1495403"</span>
@@ -889,10 +980,12 @@ You can apply these color presets to your project to give it better and unique l
 </tbody></table>
 
 <aside class="warning">
+ Warning <br>
  Note, you cannot move the folder into it's sub folder.
 </aside>
 
 <aside class="notice">
+ Notice <br>
  Any of the properties can be updated separately, as well as all of them at the same time.
 </aside>
 <h2 id='delete-user-media-folder-entire-content'>Delete User-Media Folder (entire content)</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/user-media/folders/1495403"</span>
@@ -939,6 +1032,7 @@ You can apply these color presets to your project to give it better and unique l
 </tbody></table>
 
 <aside class="warning">
+ Warning <br>
  Note, you cannot delete the root folder.
 </aside>
 <h1 id='users'>Users</h1><h2 id='get-current-user'>Get Current User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/users/current"</span>
@@ -978,6 +1072,7 @@ You can apply these color presets to your project to give it better and unique l
 <p><code>GET https://example.com/api/v1/users/current</code></p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
+ Notice <br>
  The Renderforest API uses the following error codes:
 </aside>
 
