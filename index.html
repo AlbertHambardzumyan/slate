@@ -248,6 +248,9 @@
                   <li>
                     <a href="#get-color-presets-of-the-template" class="toc-h2 toc-link" data-title="get-color-presets-of-the-template">Get Color-Presets of the Template</a>
                   </li>
+                  <li>
+                    <a href="#get-pluggable-screens-of-the-template" class="toc-h2 toc-link" data-title="get-pluggable-screens-of-the-template">Get Pluggable-Screens of the Template</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -703,6 +706,202 @@ You can apply these color presets to your project to give it better and unique l
  Notice <br>
  The number of color-presets is vary from tremplate to template.<br>
  Currently, this template has 15 color-presets, but we have included only 3 of them in our example.
+</aside>
+<h2 id='get-pluggable-screens-of-the-template'>Get Pluggable-Screens of the Template</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/templates/701/pluggable-screens"</span>
+  -H <span class="s2">"Authorization: 'mock-authorization'"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">Renderforest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@renderforest/sdk-js'</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">templateId</span><span class="p">:</span> <span class="mi">701</span>
+<span class="p">}</span>
+<span class="nx">Renderforest</span><span class="p">.</span><span class="nx">getTemplatePluggableScreens</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span> <span class="c1">// handler the success</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="c1">// handler the error</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">104</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Characters"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"screens"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2125620</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"screen_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Screen/191_man_Angry_2_n.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1900</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Angry Office worker with arms crossed"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gif_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/191_man_Angry_2_1.gif"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"composition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"191_man_Angry_2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business, computer, chair, desk, laptop, mobile phone, occupation, office, worker, arms, boss, boy, businessman,chef, company, employer, professional"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"extra_video_second"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gif_thumb_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/Gif-thumb/191_man_Angry_2_n.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gif_big_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/Big-Gif/191_man_Angry_2_1.gif"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"character_based_duration"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"max_duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"icon_adjustable"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"3562168"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3562168</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"id_screen"</span><span class="p">:</span><span class="w"> </span><span class="mi">2125620</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">392</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type your text here"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">656</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">224</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">1048</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">224</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">1048</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">332</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_4"</span><span class="p">:</span><span class="w"> </span><span class="mi">656</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_4"</span><span class="p">:</span><span class="w"> </span><span class="mi">332</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"char_Angry_2"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"word_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2125592</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"screen_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Screen/195_man_Show_text%20.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1940</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scene with office worker showing text with index finger"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gif_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/195_man_Show_text.gif"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"composition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"195_man_Show_text"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent, boss, business, businessman, character, corporate, employee, necktie, office, pointing, presentation, professional, showing, teaching, tie, worker,"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"extra_video_second"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gif_thumb_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/Gif-thumb/195_man_Show_text%20.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gif_big_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/Big-Gif/195_man_Show_text.gif"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"character_based_duration"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"max_duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"icon_adjustable"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"3562130"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3562130</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"id_screen"</span><span class="p">:</span><span class="w"> </span><span class="mi">2125592</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">463</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type your text here"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">555</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">245</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">1018</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">245</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">1018</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">313</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_4"</span><span class="p">:</span><span class="w"> </span><span class="mi">555</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_4"</span><span class="p">:</span><span class="w"> </span><span class="mi">313</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"manshow_text"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"word_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Image Holders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"screens"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2125624</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"screen_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Screen/192_man_Show_Photo_1_n.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1910</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scene with office worker pointing out the image /1 image holder "</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gif_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/192_man_Show_Photo_1_1.gif"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"composition_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192_man_Show_Photo_1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent, boss, business, businessman, character, corporate, employee, necktie, office, pointing, presentation, professional, showing, teaching, tie, worker,"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"extra_video_second"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gif_thumb_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/Gif-thumb/192_man_Show_Photo_1_n.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"gif_big_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/Big-Gif/192_man_Show_Photo_1_1.gif"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"character_based_duration"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"max_duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"icon_adjustable"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"3562175"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3562175</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"id_screen"</span><span class="p">:</span><span class="w"> </span><span class="mi">2125624</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">189</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">339</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28.jpg"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">604</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">943</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">943</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">341</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_4"</span><span class="p">:</span><span class="w"> </span><span class="mi">604</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_4"</span><span class="p">:</span><span class="w"> </span><span class="mi">341</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28.jpg"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"word_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"original_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">563</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"original_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">936</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"3562176"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3562176</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"id_screen"</span><span class="p">:</span><span class="w"> </span><span class="mi">2125624</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">368</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type your text here"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">598</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">371</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">966</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">371</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">966</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">470</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"x_4"</span><span class="p">:</span><span class="w"> </span><span class="mi">598</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"y_4"</span><span class="p">:</span><span class="w"> </span><span class="mi">470</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"man_Show_Photo_1"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"word_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves pluggable-screens of the template.<br></p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://example.com/api/v1/templates/&lt;templateId&gt;/pluggable-screens</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>templateId</td>
+<td>✔</td>
+<td>✘</td>
+<td>The Id of the template.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+ Notice <br>
+ The number of pluggable-screens is vary from tremplate to template.<br>
+ Pluggable-Screens are grouped by categories. Currently, this template has 21 groups of pluggable-screens.
+ We have included only 2 of them in our example with limited number of pluggable-screens for each if them.
 </aside>
 <h1 id='user-media'>User-Media</h1><h2 id='delete-user-media'>Delete User-Media</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/user-media"</span>
   -X DELETE -d <span class="s1">'{"fileIds": "Skeppsholmen", "parentId": 1120039}'</span>
