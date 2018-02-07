@@ -105,3 +105,86 @@ This endpoint retrieves a specific template.
 Parameter  | Required | Default | Description
 ---------- | -------- | ------- | -----------
 templateId |  ✔       | ✘       | The Id of the template to retrieve.
+
+
+## Get Color-Presets of the Template
+
+```shell
+curl "https://example.com/api/v1/templates/701/color-presets"
+  -H "Authorization: 'mock-authorization'"
+```
+
+```javascript
+const Renderforest = require('@renderforest/sdk-js')
+
+const payload = {
+  templateId: 701
+}
+Renderforest.getTemplateColorPresets(payload)
+  .then(console.log) // handler the success
+  .catch(console.error) // handler the error
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status": 200,
+  "message": "OK",
+  "data": [
+    [
+      "#e8fbff",
+      "#ffffff",
+      "#34495e",
+      "#a2c4d0",
+      "#eaa035",
+      "#14a98b",
+      "#cb4624",
+      "#f6ad44",
+      "#2d85ab",
+      "#ac2f51"
+    ],
+    [
+      "#7dcf81",
+      "#d85252",
+      "#000000",
+      "#fff77c",
+      "#ffffff",
+      "#b67ea8",
+      "#424acf",
+      "#affff8",
+      "#096c0f",
+      "#ffaa64"
+    ],
+    [
+      "#bfb9ff",
+      "#fffa88",
+      "#0b2b35",
+      "#4a134d",
+      "#e7e7b9",
+      "#ffe5ef",
+      "#a73e3e",
+      "#ffffff",
+      "#4b2663",
+      "#75c4a7"
+    ]
+  ] 
+}
+```
+
+This endpoint retrieves color-presets of the template.
+
+### HTTP Request
+
+`GET https://example.com/api/v1/templates/<templateId>/color-presets`
+
+### URL Parameters
+
+Parameter  | Required | Default | Description
+---------- | -------- | ------- | -----------
+templateId |  ✔       | ✘       | The Id of the template.
+
+<aside class="notice">
+ Note, the number of color-presets is vary from tremplate to template.<br>
+ Currently, this template has 15 color-presets, but we have included only 3 of them in our example.
+</aside>
