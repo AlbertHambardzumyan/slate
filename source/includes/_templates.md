@@ -1,6 +1,80 @@
 # Templates
 
 
+## Get All Templates
+
+```shell
+curl "https://example.com/api/v1/templates?categoryId=3&equalizer=false&limit=4"
+  -H "Authorization: 'mock-authorization'"
+```
+
+```javascript
+const Renderforest = require('@renderforest/sdk-js')
+
+const payload = {
+  categoryId: 3,
+  equalizer: false,
+  limit: 4
+}
+Renderforest.getTemplates(payload)
+  .then(console.log) // handler the success
+  .catch(console.error) // handler the error
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status": 200,
+  "message": "OK",
+  "data": [
+    {
+      "id": 912,
+      "title": "Ultimate Icon Animation Pack",
+      "videoUrl": "//player.vimeo.com/video/248458512",
+      "thumb": "https://example.com/media/Screens_2017/4_gen_2017/Ultimate-Icon-Animation-Pack/249c8f83-3f4a-4474-ade0-490bb5ca0d5a.jpg",
+      "video": true
+    },
+    {
+      "id": 701,
+      "title": "Explainer Video Toolkit",
+      "videoUrl": "//player.vimeo.com/video/190349594",
+      "thumb": "https://example.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Screen/tumb400.jpg",
+      "video": true
+    },
+    {
+      "id": 942,
+      "title": "Futuristic Cube Presentation",
+      "videoUrl": "//player.vimeo.com/video/240152695",
+      "thumb": "https://example.com/media/Screens_2017/4_gen_2017/Futuristic_Cube_Presentation/ac13db59-5751-4c64-bc04-810e0112502a.jpg",
+      "video": false
+    },
+    {
+      "id": 816,
+      "title": "My Business Promotion",
+      "videoUrl": "//player.vimeo.com/video/211478094",
+      "thumb": "https://example.com/media/Screens_2017/Promotion/my-business-promotion/766f703e-0bbf-4dc6-b845-09d3a81f7eb8.jpg",
+      "video": false
+    }
+  ] 
+}
+```
+
+This endpoint retrieves all templates.
+
+### HTTP Request
+
+`GET https://example.com/api/v1/templates`
+
+### Query Parameters
+
+Parameter  | Required | Default | Description
+---------- | -------- | ------- | -----------
+categoryId |  ✘       | ✘       | The Id of the template category.
+equalizer  |  ✘       | ✘       | Retrieves only equalizer templates or eliminates equalizer templates.
+limit      |  ✘       | 10      | Restricts the number of templates to be retrieved.
+
+
 ## Get a Specific Template
 
 ```shell
