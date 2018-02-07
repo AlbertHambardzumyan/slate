@@ -1353,35 +1353,84 @@ You can apply these color presets to your project to give it better and unique l
 
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Status code</th>
+<th>Error code</th>
+<th>Error message</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>BadRequest</td>
+<td>✍</td>
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized -- Authorization required.</td>
+<td>Unauthorized</td>
+<td>Authorization required.</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- You do not have enough permission to access the resource.</td>
+<td>Forbidden</td>
+<td>The user is blocked.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The &lt; resource &gt; could not be found.</td>
+<td>NotFound</td>
+<td>Media folder with id: {id} is not found.</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many resources! Slow down!</td>
+<td></td>
+<td></td>
+<td>The specified resource path does not exist.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>The sound with id: {id} is not found.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>The tariff plan resource is not found.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>The template with id: {templateId} is not found.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>The user resource is not found.</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Conflict</td>
+<td>You cannot move the folder into it&#39;s sub folder.</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Conflict</td>
+<td>✍</td>
+</tr>
+<tr>
+<td>422</td>
+<td>UnprocessableEntity</td>
+<td>✍</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>InternalError</td>
+<td>The server encountered an internal error. Try again later.</td>
 </tr>
 </tbody></table>
+
+<aside class="warning">
+ Warning <br>
+ The message property of the errors are vary. We have listed few of them to give you an overview of it.
+ We reserve the right to change our API error's message at any time, thus we encourage you to stick to the error's
+  status and code properties.
+</aside>
 
       </div>
       <div class="dark-box">
