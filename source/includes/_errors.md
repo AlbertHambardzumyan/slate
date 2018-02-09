@@ -12,6 +12,8 @@ Status      | Code                | Message
 400         | InvalidInput        | ✍
 401         | Unauthorized        | Authorization required.
 403         | Forbidden           | The user is blocked.
+            |                     | Bounced email.
+            |                     | Your email is invalid, please contact support https://www.renderforest.com/contact-us.
 404         | NotFound            | Media folder with id: {id} is not found.
             |                     | The specified resource path does not exist.
             |                     | The sound with id: {id} is not found.
