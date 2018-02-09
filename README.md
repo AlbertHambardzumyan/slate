@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/AlbertHambardzumyan/slate/blob/master/source/images/logo.png" alt="Renderforest: Renderforest API Documentation" width="226">
+  <img src="https://github.com/AlbertHambardzumyan/slate/blob/master/source/images/logo.png" alt="Renderforest: API Documentation" width="150" height="150>
 </p>
 
 Getting Started
@@ -15,10 +15,7 @@ You're going to need:
 
 ### Getting Set Up
 
-1. Fork this repository on GitHub.
-2. Clone *your forked repository* (not our original one) to your hard drive with `git clone https://github.com/YOURUSERNAME/slate.git`
-3. `cd slate`
-4. Initialize and start Slate. You can either do this locally, or with Vagrant:
+Initialize and start. You can either do this locally, or with Vagrant:
 
 ```shell
 # either run this to run locally
@@ -29,11 +26,9 @@ bundle exec middleman server
 vagrant up
 ```
 
-You can now see the docs at http://localhost:4567. Whoa! That was fast!
+You can now see the docs at http://localhost:4567.
 
 Now that Slate is all set up on your machine, you'll probably want to learn more about [editing Slate markdown](https://github.com/lord/slate/wiki/Markdown-Syntax), or [how to publish your docs](https://github.com/lord/slate/wiki/Deploying-Slate).
-
-If you'd prefer to use Docker, instructions are available [in the wiki](https://github.com/lord/slate/wiki/Docker).
 
 ### Note on JavaScript Runtime
 
@@ -43,5 +38,3 @@ Questions? Need Help? Found a bug?
 --------------------
 
 If you've got questions about setup, deploying, special feature implementation in your fork, or just want to chat with the developer, please feel free to [start a thread in our Spectrum community](https://spectrum.chat/slate)!
-
-Found a bug with upstream Slate? Go ahead and [submit an issue](https://github.com/lord/slate/issues). And, of course, feel free to submit pull requests with bug fixes or changes to the `dev` branch.
