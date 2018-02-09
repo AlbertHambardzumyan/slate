@@ -34,7 +34,7 @@ Learn more about [editing Slate markdown](https://github.com/lord/slate/wiki/Mar
 
 For those who don't have JavaScript runtime or are experiencing JavaScript runtime issues with ExecJS, it is recommended to add the [rubyracer gem](https://github.com/cowboyd/therubyracer) to your gemfile and run `bundle` again.
 
-Questions? Need Help? Found a bug?
+Questions? Need Help?
 --------------------
 
-If you've got questions about setup, deploying, special feature implementation in your fork, or just want to chat with the developer, please feel free to [start a thread in our Spectrum community](https://spectrum.chat/slate)!
+Feel free to [start a thread in Spectrum community](https://spectrum.chat/slate)!
