@@ -45,6 +45,74 @@ Parameter | Required | Default | Description
 fileIds   |  ✔       | ✘       | An array of user-media Id's to delete.
 
 
+## Get User-Media Stats
+
+```shell
+curl "https://example.com/api/v1/user-media/stats"
+  -H "Authorization: 'mock-authorization'"
+```
+
+```javascript
+const Renderforest = require('@renderforest/sdk-js')
+
+Renderforest.getUserMediaStats()
+  .then(console.log) // handler the success
+  .catch(console.error) // handler the error
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status": 200,
+  "message": "OK",
+  "data": {
+    "limit": {
+      "count": 100000,
+      "size": 85899345920
+    },
+    "usage": {
+      "count": 128,
+      "size": 586150001,
+      "details": [
+        {
+          "mime": "image/jpeg",
+          "total_count": "88",
+          "total_size": "139069746"
+        },
+        {
+          "mime": "video/quicktime",
+          "total_count": "4",
+          "total_size": "11165688"
+        },
+        {
+          "mime": "video/mp4",
+          "total_count": "15",
+          "total_size": "364927642"
+        },
+        {
+          "mime": "audio/mp3",
+          "total_count": 16,
+          "total_size": 2233025
+        },
+        {
+          "mime": "video/rendered",
+          "total_count": 5,
+          "total_size": 68753900
+        }
+      ]
+    }
+  }
+}
+```
+
+This endpoint retrieves the user-media stats.
+
+### HTTP Request
+
+`GET https://example.com/api/v1/user-media/stats`
+
+
 ## Add User-Media Folder
 
 ```shell
