@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/AlbertHambardzumyan/slate/blob/master/source/images/logo.png" alt="Renderforest: API Documentation" width="150" height="150>
+  <img src="https://github.com/AlbertHambardzumyan/slate/blob/master/source/images/logo.png" alt="Renderforest: API Documentation" width="226">
 </p>
 
 Getting Started
